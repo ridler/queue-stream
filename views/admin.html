@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="queue-me">
+<head>
+	<title>Tagg's Lab Queue (Admin)</title>
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A Queue">
+  <meta name="author" content="Forrest Tagg Joshua Ridler">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+</head>
+<body>
+	<div ng-controller="StreamControl" class="container">
+		<ol>
+			<li ng-repeat="person in q"><h3>{{person}}</h3></li>
+		</ol>
+
+		<button ng-click="pop()" class="btn btn-default btn-lg">Pop Q</button>
+		</br></br>
+		<button ng-click="reset()" class="btn btn-default btn-lg">RESET</button>
+
+	</div>
+
+	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="javascripts/client.js"></script>
+
+</body>
+</html>

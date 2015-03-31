@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xlmns:ng="http://angularjs.org" ng-app="queue-me">
+<head>
+	<title>Tagg's Lab Queue</title>
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A Queue">
+  <meta name="author" content="Forrest Tagg Joshua Ridler">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+</head>
+<body>
+	<div ng-controller="StreamControl" class="container">
+		<h1>Line Total: {{q.length}}</h1>
+		<ol>
+			<li ng-repeat="person in q"><h3>{{person}}</h3></li>
+		</ol>
+
+		<form ng-submit="submitName()" class="form-inline">
+			<div class="form-group">
+				<div class="input-group">
+					<input ng-model="addition" type="text" class="form-control" placeholder="Name">
+				</div>
+			</div>
+			<div ng-show="dupes" class="alert alert-danger">
+				You cannot add duplicates to the queue.  Wait your trun or try again.
+			</div>
+			<button type="submit" class="btn btn-default btn-lg">Submit</button>
+		</form>
+
+	</div>
+
+	<script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="javascripts/client.js"></script>
+
+</body>
+</html>
